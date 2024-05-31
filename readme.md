@@ -2,6 +2,9 @@
 
 KeyPassAI is an intelligent password manager built using Python, PyQt5 for the graphical interface, and OpenAI's GPT-4o for password generation and analysis. This application helps users securely store, generate, and analyze passwords with the assistance of AI.
 
+## Preview
+![Screenshot_18](https://github.com/king-tri-ton/keypassai/assets/53092931/6a3cad8f-db59-4e2c-bd64-2e879da15b1a)
+
 ## Features
 
 - **Secure Password Storage:** Store passwords securely with encryption.
