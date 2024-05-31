@@ -1,0 +1,7 @@
+/__pycache__
+/__pycache__/*.py
+*.db
+config.py
+secret.key
+*.txt
+!requirements.txt
