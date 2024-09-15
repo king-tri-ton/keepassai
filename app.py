@@ -1,31 +1,9 @@
 import sys
 import sqlite3
-import os
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QMessageBox, QListWidget
-from cryptography.fernet import Fernet
 from openai import OpenAI
-from config import *
-
-def load_key():
-    """Loads a key from the `secret.key` file or creates a new one if the file does not exist."""
-    if os.path.exists(KEY_FILE):
-        with open(KEY_FILE, 'rb') as key_file:
-            key = key_file.read()
-    else:
-        key = Fernet.generate_key()
-        with open(KEY_FILE, 'wb') as key_file:
-            key_file.write(key)
-    return key
-
-# Loading the encryption key
-key = load_key()
-cipher_suite = Fernet(key)
-
-def encrypt_password(password):
-    return cipher_suite.encrypt(password.encode())
-
-def decrypt_password(encrypted_password):
-    return cipher_suite.decrypt(encrypted_password).decode()
+from config import AI_TOKEN
+from functions import *
 
 def generate_password(prompt):
     openai = OpenAI(api_key=AI_TOKEN)
@@ -40,14 +18,14 @@ def generate_password(prompt):
     message = choice.message
     return message.content.strip()
 
-def analyze_password(password):
+def analyze_password(prompt):
     openai = OpenAI(api_key=AI_TOKEN)
     response = openai.chat.completions.create(
         model="gpt-4",
         messages=[
-            {"role": "user", "content": f"Analyze the security of the following password: {password}"}
+            {"role": "user", "content": prompt}
         ],
-        max_tokens=64
+        max_tokens=128
     )
     choice = response.choices[0]
     message = choice.message
@@ -147,7 +125,7 @@ class PasswordManager(QWidget):
             QMessageBox.warning(self, 'Input Error', 'Password field must be filled.')
             return
 
-        analysis = analyze_password(password)
+        analysis = analyze_password(f"Analyze the security of the following password: {password}")
         self.analysisOutput.setText(analysis)
 
     def load_accounts(self):
