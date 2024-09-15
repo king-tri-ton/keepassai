@@ -1,99 +1,95 @@
-# KeyPassAI
+# KeePassAI
 
-KeyPassAI is an intelligent password manager built using Python, PyQt5 for the graphical interface, and OpenAI's GPT-4o for password generation and analysis. This application helps users securely store, generate, and analyze passwords with the assistance of AI.
+KeePassAI — это интеллектуальный менеджер паролей, разработанный на Python с использованием PyQt5 для графического интерфейса и GPT-4o от OpenAI для генерации и анализа паролей. Приложение помогает пользователям безопасно хранить, генерировать и анализировать пароли с помощью искусственного интеллекта.
 
-## Preview
-![Screenshot_18](https://github.com/king-tri-ton/keypassai/assets/53092931/6a3cad8f-db59-4e2c-bd64-2e879da15b1a)
+## Превью
+![Screenshot_18](https://github.com/king-tri-ton/keepassai/assets/53092931/6a3cad8f-db59-4e2c-bd64-2e879da15b1a)
 
-## Features
+## Основные функции
 
-- **Secure Password Storage:** Store passwords securely with encryption.
-- **Password Generation:** Generate secure passwords using AI (GPT-4o).
-- **Password Analysis:** Analyze the security of passwords using AI (GPT-4o).
-- **User-Friendly Interface:** Intuitive interface for easy password management.
-- **Account Management:** Save and load account details for various services.
+- **Безопасное хранение паролей:** Безопасное хранение паролей с использованием шифрования.
+- **Генерация паролей:** Генерация надежных паролей с использованием ИИ (GPT-4o).
+- **Анализ паролей:** Анализ безопасности паролей с использованием ИИ (GPT-4o).
+- **Удобный интерфейс:** Интуитивно понятный интерфейс для легкого управления паролями.
+- **Управление учетными записями:** Сохранение и загрузка данных учетных записей для различных сервисов.
 
-## Installation
+## Установка
 
-1. **Clone the repository:**
+1. **Клонируйте репозиторий:**
 
     ```bash
-    git clone https://github.com/king-tri-ton/keypassai.git
-    cd keypassai
+    git clone https://github.com/king-tri-ton/keepassai.git
+    cd keepassai
     ```
 
-2. **Install the required packages:**
+2. **Установите необходимые пакеты:**
 
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Set up the configuration:**
+3. **Настройте конфигурацию:**
 
-    - Obtain an API key from OpenAI and update the `AI_TOKEN` variable in `config.py`.
-    - Rename `exp.config.py` to `config.py`.
+    - Получите API-ключ от OpenAI и обновите переменную `AI_TOKEN` в файле `config.py`.
+    - Переименуйте файл `exp.config.py` в `config.py`.
 
     ```bash
     mv exp.config.py config.py
     ```
 
-4. **Run the application:**
+4. **Запустите приложение:**
 
     ```bash
     python app.py
     ```
 
-## Usage
+## Использование
 
-1. **Generate a Password:**
-   - Click the "Generate Password" button to create a secure password using AI (GPT-4o).
+1. **Генерация пароля:**
+   - Нажмите кнопку «Generate Password» для создания надежного пароля с помощью ИИ (GPT-4o).
 
-2. **Save a Password:**
-   - Fill in the service name, username, and password fields, then click "Save Password" to securely store your credentials.
+2. **Сохранение пароля:**
+   - Заполните поля с названием сервиса, именем пользователя и паролем, затем нажмите «Save Password» для безопасного сохранения данных.
 
-3. **Analyze a Password:**
-   - Enter a password and click "Analyze Password" to get an AI-driven security analysis using GPT-4o.
+3. **Анализ пароля:**
+   - Введите пароль и нажмите «Analyze Password», чтобы получить анализ его безопасности с помощью ИИ (GPT-4o).
 
-4. **Load Accounts:**
-   - Click "Load Accounts" to view all saved accounts. Click on an account to load its details.
+4. **Загрузка учетных записей:**
+   - Нажмите «Load Accounts», чтобы увидеть все сохраненные учетные записи. Нажмите на учетную запись для загрузки её данных.
 
-## File Structure
+## Структура файлов
 
-- `app.py`: Main application code.
-- `config.py`: Configuration file containing sensitive information like the OpenAI API key.
-- `requirements.txt`: List of dependencies required to run the application.
+- `app.py`: Основной код приложения.
+- `config.py`: Файл конфигурации, содержащий чувствительные данные, такие как API-ключ OpenAI.
+- `requirements.txt`: Список зависимостей, необходимых для работы приложения.
 
-## Security Notes
+## Замечания по безопасности
 
-1. **API Token:** Ensure that your OpenAI API token is kept confidential.
-2. **Encryption Key:** The encryption key is currently stored in a file named `secret.key`. This is a security risk, and future updates will address more secure key management solutions.
+1. **API-ключ:** Убедитесь, что ваш API-ключ OpenAI хранится конфиденциально.
+2. **Ключ шифрования:** Ключ шифрования в данный момент хранится в файле под названием `secret.key`. Это представляет собой потенциальный риск безопасности, и в будущих обновлениях будут предложены более безопасные решения для управления ключами.
 
-## Future Updates
+## Будущие обновления
 
-We are committed to improving the security of KeyPassAI. Future updates will focus on:
-- Enhanced key management to protect encryption keys.
-- Additional security measures for storing and accessing sensitive data.
-- Continuous improvement of AI-driven password generation and analysis using GPT-4o.
+Я буду улучшать безопасность KeePassAI. В будущих обновлениях планирую:
+- Улучшенное управление ключами для защиты ключей шифрования.
+- Дополнительные меры безопасности для хранения и доступа к чувствительным данным.
+- Постоянное улучшение генерации и анализа паролей с помощью ИИ GPT-4o.
 
-## Requirements
+## Требования
 
 - Python 3.x
 - PyQt5
 - Cryptography
 - OpenAI API
 
-## Contributing
+## Вклад
 
-Contributions are welcome! Please submit a pull request or open an issue to discuss any changes or improvements.
+Я приветствуем вклад в проект! Пожалуйста, отправляйте pull request или открывайте issue для обсуждения изменений или улучшений.
 
-## License
+## Лицензия
 
-This project is licensed under the MIT License.
+Проект распространяется под лицензией MIT.
 
-## Contact
+## Контакты
 
-For any questions or feedback, please contact [mdolmatov99@gmail.com](mailto:mdolmatov99@gmail.com) or reach out on [Telegram](https://t.me/king_triton).
-
----
-
-Feel free to reach out if you encounter any issues or have suggestions for improvements. Happy password managing with KeyPassAI!
+Если у вас есть вопросы или отзывы, свяжитесь со мной по почте [mdolmatov99@gmail.com](mailto:mdolmatov99@gmail.com) или в [Telegram](https://t.me/king_triton).
